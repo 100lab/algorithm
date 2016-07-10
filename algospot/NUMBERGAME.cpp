@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// https://algospot.com/judge/problem/read/NUMBERGAME
+
 #define max(a, b) a>b?a:b
 #define min(a, b) a<b?a:b
 #define NA -999999999
@@ -9,6 +11,7 @@ int cache[51][51];
 
 int dp(int* data, int left, int right)
 {
+	/*
 	if (left == right)
 		return data[left];
 	else if (right - left == 1)
@@ -17,6 +20,9 @@ int dp(int* data, int left, int right)
 		int less = min(data[left], data[right]);
 		return more - less;
 	}
+	*/
+	if (left > right)
+		return 0;
 
 	if (cache[left][right] != NA)
 		return cache[left][right];
